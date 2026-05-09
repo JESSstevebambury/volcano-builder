@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volcano Builder</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --magma: #ff4500;
@@ -66,26 +66,21 @@ body {
 
 header {
   text-align: center;
+  padding: 4px 0 0;
 }
 header h1 {
-  font-family: var(--font-head);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 900;
+  font-family: 'Boogaloo', cursive;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 400;
   color: var(--yellow);
-  text-shadow: 0 4px 0 #8b3a00, 0 8px 24px rgba(255,100,0,0.4);
-  letter-spacing: -1px;
+  text-shadow: 0 5px 0 #8b3a00, 0 10px 30px rgba(255,100,0,0.45);
+  letter-spacing: 1px;
   line-height: 1;
-}
-header p {
-  font-size: 1.1rem;
-  color: #9ab8d8;
-  margin-top: 4px;
-  font-weight: 600;
 }
 
 .workspace {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 230px 1fr;
   gap: 16px;
   align-items: start;
 }
@@ -368,7 +363,6 @@ header p {
 <div class="app">
   <header>
     <h1>🌋 Volcano Builder</h1>
-    <p>Drag each label onto the right part of the volcano</p>
   </header>
 
   <div class="workspace">
@@ -390,6 +384,22 @@ header p {
         <div class="score-pip" id="pip3"></div>
         <div class="score-pip" id="pip4"></div>
         <div class="score-pip" id="pip5"></div>
+      </div>
+
+      <div class="fact-box" id="factBox" style="margin-top:12px;border-radius:10px;padding:10px 12px;min-height:0;font-size:0.88rem;">
+        <span class="fact-icon" style="font-size:1.2rem;">🔍</span>
+        <span id="factText">Drag a label onto the matching part of the volcano!</span>
+      </div>
+
+      <div class="erupt-wrap" style="margin-top:8px;flex-direction:column;gap:8px;min-height:0;">
+        <button class="erupt-btn" id="eruptBtn" style="font-size:1.1rem;padding:10px 20px;">🌋 ERUPT!</button>
+        <button class="reset-btn" id="resetBtn">↺ Start Again</button>
+        <div class="eruption-line" id="eruptLine" style="font-size:0.9rem;text-align:center;"></div>
+      </div>
+
+      <div class="completion-banner" id="completionBanner" style="margin-top:8px;padding:12px;">
+        <h2 style="font-size:1.2rem;">🎉 All parts labelled!</h2>
+        <p style="font-size:0.85rem;">Brilliant! Now press ERUPT!</p>
       </div>
     </div>
 
@@ -591,22 +601,6 @@ header p {
 
         <div class="placed-labels" id="placedLabels"></div>
         <div class="eruption-overlay" id="eruptionOverlay"></div>
-      </div>
-
-      <div class="fact-box" id="factBox">
-        <span class="fact-icon">🔍</span>
-        <span id="factText">Drag a label from the left onto the matching part of the volcano to learn about it!</span>
-      </div>
-
-      <div class="erupt-wrap">
-        <button class="erupt-btn" id="eruptBtn">🌋 ERUPT!</button>
-        <button class="reset-btn" id="resetBtn">↺ Start Again</button>
-        <div class="eruption-line" id="eruptLine"></div>
-      </div>
-
-      <div class="completion-banner" id="completionBanner">
-        <h2>🎉 All parts labelled!</h2>
-        <p>Brilliant work! Now press ERUPT to see your volcano in action!</p>
       </div>
     </div>
   </div>
